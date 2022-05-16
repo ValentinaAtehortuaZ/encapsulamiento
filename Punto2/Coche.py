@@ -1,27 +1,45 @@
 class Coche:    
    
-    def __init__(self,escuderias):
-        self.escuderias=escuderias
-        
-    def calcularMasCara(self):
-        ordenados = sorted(self.escuderias, key=lambda escuderia : escuderia[3], reverse=True)
-        return ordenados[0]
+    def __init__(self):
+        self.nombreEscu=None
+        self.motor=None
+        self.piloto=None
+        self.costo=None
 
-    def contarEscuderias(self):
-        i=0
-        mercedes=0
-        ferrari=0
-        renault=0
-        honda=0
-        for i in range(len(self.escuderias)):
-            if(self.escuderias[i][1]=='mercedes'):
-                mercedes+=1
-            elif(self.escuderias[i][1]=='ferrari'):
-                ferrari+=1
-            elif(self.escuderias[i][1]=='renault'):
-                renault+=1
-            elif(self.escuderias[i][1]=='honda'):
-                honda+=1
+  #Getters
+    @property
+    def nombreEscu(self):
+        return(self.__nombreEscu)
+    @property
+    def motor(self):
+        return(self.__motor)
+    @property
+    def piloto(self):
+        return (self.__piloto)
+    @property
+    def costo(self):
+        return(self.__costo)
 
-        totalEscuderias={'mercedes':mercedes, 'ferrari':ferrari, 'renault': renault, 'honda': honda}
-        return totalEscuderias
+
+    #Setters
+    @nombreEscu.setter
+    def nombreEscu(self, nombreEscu):
+        self.__nombreEscu=nombreEscu
+
+    @motor.setter
+    def motor(self, motor):
+        self.__motor=motor
+                
+    @piloto.setter
+    def piloto(self, piloto):
+        self.__piloto=piloto
+
+    @costo.setter
+    def costo(self, costo):
+        try:
+            costov=float(costo) 
+            self.__costo=costov
+        except:
+            print("El costo debe ser un numero")
+    
+       

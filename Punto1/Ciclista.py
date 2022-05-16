@@ -57,11 +57,3 @@ class Ciclista:
         except:
             print("El time debe ser un numero")
 
-    def guardarCiclitas(self):
-        ciclista=[self.name, self.age, self.country, self.time]
-        self.ciclistas.append(ciclista)
-        return self.ciclistas
-
-    def calcularTiempoMenor(self, ciclistas):
-        ordenados = sorted(ciclistas, key=lambda c : c[3])
-        return ordenados
